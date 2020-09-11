@@ -1,0 +1,62 @@
+<!-- 尝试引入scss文件 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <title>弹性布局+rem实现</title>
+</head>
+<style type="sass">
+</style>
+
+<body>
+    <header>东方红基金</header>
+    <section>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+    </section>
+    <footer>
+        <div class="menu selected" onclick="changeTab(0);">首页</div>
+        <div class="menu" onclick="changeTab(1);">资产</div>
+        <div class="menu" onclick="changeTab(2);">四笔钱</div>
+        <div class="menu" onclick="changeTab(3);">我的</div>
+    </footer>
+</body>
+
+</html>
+<script>
+    var designWidth = 750;  		// 设计稿宽度
+    var remPx = 100;               // 在屏幕宽度750px，的时候，设置根元素字体大小 100px
+    var scale = window.innerWidth / designWidth; //计算当前屏幕的宽度与设计稿比例
+    document.documentElement.style.fontSize = scale * remPx + 'px';
+
+
+    var menus = document.getElementsByClassName('menu');
+    // 点击tab改变样式
+    function changeTab(index_) {
+        for (var i = 0; i < menus.length; i++) {
+            if (index_ == i) {
+                menus[i].classList.add("selected");
+            } else {
+                menus[i].classList.remove("selected");
+            }
+        }
+    }
+</script>

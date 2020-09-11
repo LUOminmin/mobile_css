@@ -1,0 +1,165 @@
+
+
+<!--  参考链接：https://github.com/amfe/lib-flexible-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>淘宝flexible实现</title>
+    <!-- <script src='../lib-flexible/index.js'></script> -->
+
+    <!-- 方案一: -->
+    <script src='../lib-flexible/flexible.js'></script>
+    <link rel="stylesheet" href="../static/css/flexible_css.css">
+    <!-- 方案二: -->
+    <!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> -->
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* 清除滚动条 */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    /* [data-dpr="2"] div {
+        font-size: 16px;
+    }
+
+    [data-dpr="3"] div {
+        font-size: 24px;
+    } */
+    header {
+        width: 100%;
+        height: 100px;
+        background-color: red;
+        line-height: 100px;
+        text-align: center;
+        font-size: 32px;
+    }
+    section {
+        flex: 1;
+        overflow: scroll;
+        margin: 0 20px;
+        font-size: 24px;
+    }
+    section div {
+        padding: 20px;
+        background-color: pink;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        font-size: 26px;
+        color: #333;
+        border-top: solid #999 2px;
+        border-bottom: solid #999 2px;
+    }
+
+    footer .menu {
+        padding-left: 50px;
+        height: 100px;
+        line-height: 100px;
+        background-repeat: no-repeat;
+        background-size: 34px 26px;
+        background-position: 0 40px;
+
+    }
+
+    footer .selected {
+        font-size: 30px;
+        color: blue;
+    }
+
+    footer .menu:nth-child(1) {
+        background-image: url(../static/image/account_0.png);
+    }
+
+    footer .menu:nth-child(1).selected {
+        background-image: url(../static/image/account_0_select.png);
+    }
+
+    footer .menu:nth-child(2) {
+        background-image: url(../static/image/account_1.png);
+    }
+
+    footer .menu:nth-child(2).selected {
+        background-image: url(../static/image/account_1_select.png);
+    }
+
+    footer .menu:nth-child(3) {
+        background-image: url(../static/image/account_2.png);
+    }
+
+    footer .menu:nth-child(3).selected {
+        background-image: url(../static/image/account_2_select.png);
+    }
+
+    footer .menu:nth-child(4) {
+        background-image: url(../static/image/account_3.png);
+    }
+
+    footer .menu:nth-child(4).selected {
+        background-image: url(../static/image/account_3_select.png);
+    }
+</style>
+
+<body>
+    <header>东方红基金</header>
+    <section>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+    </section>
+    <footer>
+        <div class="menu selected" onclick="changeTab(0);">首页</div>
+        <div class="menu" onclick="changeTab(1);">资产</div>
+        <div class="menu" onclick="changeTab(2);">四笔钱</div>
+        <div class="menu" onclick="changeTab(3);">我的</div>
+    </footer>
+</body>
+
+</html>
+<script>
+    var menus = document.getElementsByClassName('menu');
+
+    // 点击tab改变样式
+    function changeTab(index_) {
+        for (var i = 0; i < menus.length; i++) {
+            if (index_ == i) {
+                menus[i].classList.add("selected");
+            } else {
+                menus[i].classList.remove("selected");
+            }
+        }
+    }
+</script>

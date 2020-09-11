@@ -1,0 +1,49 @@
+
+<!--  -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>移动端适配的五种方法</title>
+</head>
+<style>
+/* 第二种：借助media查询实现rem适配,对屏幕大小划分了html不同的font-size */
+@media screen and (min-width: 320px) {html{font-size:50px;}}
+@media screen and (min-width: 360px) {html{font-size:56.25px;}}
+@media screen and (min-width: 375px) {html{font-size:58.59375px;}}
+@media screen and (min-width: 400px) {html{font-size:62.5px;}}
+@media screen and (min-width: 414px) {html{font-size:64.6875px;}}
+@media screen and (min-width: 440px) {html{font-size:68.75px;}}
+@media screen and (min-width: 480px) {html{font-size:75px;}}
+@media screen and (min-width: 520px) {html{font-size:81.25px;}}
+@media screen and (min-width: 560px) {html{font-size:87.5px;}}
+@media screen and (min-width: 600px) {html{font-size:93.75px;}}
+@media screen and (min-width: 640px) {html{font-size:100px;}}
+@media screen and (min-width: 680px) {html{font-size:106.25px;}}
+@media screen and (min-width: 720px) {html{font-size:112.5px;}}
+@media screen and (min-width: 760px) {html{font-size:118.75px;}}
+@media screen and (min-width: 800px) {html{font-size:125px;}}
+@media screen and (min-width: 960px) {html{font-size:150px;}}
+</style>
+<body></body>
+</html>
+<script>
+// 第一种：设置initial-scale,将所有设备的布局窗口调整为设计图尺寸；
+var metaNode = document.querySelector('meta[name=viewport]');
+var designWidth = 375;  //定义设计稿宽度为375
+var scale = document.documentElement.clientWidth/designWidth;  //计算比例
+meta.content="initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale+",user-scalable=no";
+
+
+// 第三种：js配合修改rem适配；
+var designWidth  = 375;
+var remPx = 100;
+var scale = window.innerWidth / designWidth;
+document.documentElement.style.fontSize = scale * remPx + 'px';
+
+// 第四种，借用vw和rem处理；
+
+
+</script>
+
+

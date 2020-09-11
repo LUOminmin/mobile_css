@@ -1,0 +1,165 @@
+<!-- 使用原生css实现 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <title>弹性布局+rem实现</title>
+</head>
+<style lang="scss">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 清除滚动条 */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 100 / 7.5 = 13.3333  ,得出结果是1rem == 100px*/
+    html {
+        font-size: 13.3333vw;
+    }
+
+    body {
+        font-size: 0.26rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+        height: 1rem;
+        background-color: red;
+        line-height: 1rem;
+        text-align: center;
+        font-size: 0.32rem;
+    }
+
+    section {
+        flex: 1;
+        overflow: scroll;
+        margin: 0 0.2rem;
+        font-size: 0.24rem;
+    }
+
+    section div {
+        padding: 0.2rem;
+        background-color: pink;
+        border-radius: 0.2rem;
+        margin-top: 0.2rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 1rem;
+        font-size: .26rem;
+        color: #333;
+        border-top: solid #999 .02rem;
+        border-bottom: solid #999 .02rem;
+    }
+
+    footer .menu {
+        padding-left: 0.5rem;
+        height: 1rem;
+        line-height: 1rem;
+        background-repeat: no-repeat;
+        background-size: .34rem .26rem;
+        background-position: 0 0.4rem;
+
+    }
+
+    footer .selected {
+        font-size: .3rem;
+        color: blue;
+    }
+
+    footer .menu:nth-child(1) {
+        background-image: url(../static/image/account_0.png);
+    }
+
+    footer .menu:nth-child(1).selected {
+        background-image: url(../static/image/account_0_select.png);
+    }
+
+    footer .menu:nth-child(2) {
+        background-image: url(../static/image/account_1.png);
+    }
+
+    footer .menu:nth-child(2).selected {
+        background-image: url(../static/image/account_1_select.png);
+    }
+
+    footer .menu:nth-child(3) {
+        background-image: url(../static/image/account_2.png);
+    }
+
+    footer .menu:nth-child(3).selected {
+        background-image: url(../static/image/account_2_select.png);
+    }
+
+    footer .menu:nth-child(4) {
+        background-image: url(../static/image/account_3.png);
+    }
+
+    footer .menu:nth-child(4).selected {
+        background-image: url(../static/image/account_3_select.png);
+    }
+</style>
+
+<body>
+    <header>东方红基金</header>
+    <section>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+        <div>移动端的机型有很多，从大到小，从 iphone 到安卓，我们想要对应所有的样式都去做一套 ui 设计，基本是不可能的事情，那么我们现在比较常见的方案是按照 ui
+            设计稿对页面进行百分比缩放，也就是说我们需要让我们页面在屏幕大的机型，跟屏幕小的机型上，百分比几乎保持一致。</div>
+    </section>
+    <footer>
+        <div class="menu selected" onclick="changeTab(0);">首页</div>
+        <div class="menu" onclick="changeTab(1);">资产</div>
+        <div class="menu" onclick="changeTab(2);">四笔钱</div>
+        <div class="menu" onclick="changeTab(3);">我的</div>
+    </footer>
+</body>
+
+</html>
+<script>
+    var menus = document.getElementsByClassName('menu');
+
+    // 点击tab改变样式
+    function changeTab(index_) {
+        for (var i = 0; i < menus.length; i++) {
+            if (index_ == i) {
+                menus[i].classList.add("selected");
+            } else {
+                menus[i].classList.remove("selected");
+            }
+        }
+    }
+</script>
